@@ -6,6 +6,12 @@
 \usepackage[sort&compress]{achemso}
 \usepackage{lineno}
 
+% For typesetting roman numerals
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
 % some formatting tags
 \oddsidemargin  0.0in
 \evensidemargin 0.0in
