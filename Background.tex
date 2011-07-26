@@ -14,14 +14,36 @@ Hydrated \suldiox~clusters have been studied extensively with many recent experi
 
 The cluster geometries found in Baer's study of the surface \suldiox~hydrates imply a cyclic bonding structure through the two or three waters involved. This is manifested as a closed loop formed by the intermolecular hydrogen bonds, S-O interactions, and covalent bonds of the molecules involved. Figure \ref{fig:cyclic-example} depicts one such cyclic structure showing the bonds beginning on the \suldiox-sulfur and returning through the \suldiox-oxygen in a two-water cluster.
 
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=1.0]{images/double-cycle-type2-small.png}
+		\caption{}
+		\label{fig:cyclic-example}
+	\end{center}
+\end{figure}
+
 The optimized geometry of the \suldiox-hydrates suggest cyclic bonding structures, but it remains a different entirely when a \suldiox~is placed in a dynamics environment such as in the course of molecular dynamics simulations of an aqueous surface. Although geometry optimization shows the formation of these cyclic complexes, do they form during a dynamic bonding process on a simulated water surface? Graph theoretical techniques can be employed to determine if cyclic structures form during the simulations. Previous use of graphs in molecular computations were applied to finding stable arrangements of water clusters, ice, hydrogen bonding, extracting topological molecular properties, and cyclic structure studies.\cite{Anick2002, Huber2007, Radhakrishnan1991, Shi2005, Garcia2004, McDonald1998}
 
 Here we will only briefly introduce graph theoretical concepts as they have been described well by others, and with varied application to cyclic structures.\cite{Tutte1984, Balakrishnan2000, Harary1973, Huber2007, Garcia2004, Dury2001} A graph consists of a set of vertexes, and edges that connect the vertexes. A molecule can be represented with atoms as vertexes, and edges for each intramolecular covalent bond connecting the atoms. The set of edges is then further expanded to include intermolecular interactions such as hydrogen bonds and other bonding bonding interactions. Edges may be assigned weights (i.e. bond lengths), types, and can be directional pointing towards a specific target from a source. A molecular system including all atoms, bonds, and interactions is thus fully described by a graph. 
 
 To detect cyclic structures in a graph a depth-first or breadth-first search (DFS and BFS, respectively) may be used.\cite{Knuth1997, Cormen 2001} A BFS is a recursive algorithm of queuing vertexes and all adjacent neighboring vertexes while performing a specified procedure on each visited vertex. This is easily performed on adjacency list or connectivity matrix data structures, iterating through atoms of interest in the graph as starting points of the search. In BFS terminology, all nodes are colored during graph traversal to distinguish unvisited nodes (white), queued nodes (gray), and visited nodes (black). Using a BFS on a graph, cyclic structures are detected any time a ``gray target'' is encountered when queuing adjacent neighbors of a vertex. A benefit of BFS on a graph is the ability to determine the smallest cyclic structure in which a given vertex is a member. In the case of \suldiox~hydrate structures, beginning the BFS with the \suldiox~sulfur as the root vertex will discover cyclic bonding structures in order of size. Here we are only concerned with the smallest cyclic structure involving those waters in the first and second hydration shells around the \suldiox. Furthermore, it is possible to reconstruct a cycle's structure to find the size of the cycle (number of atoms involved), the number of unique waters in the cycle, and the type of cyclic structure encountered.
 
-The various types of cyclic bonding arrangements are shown in Figure \ref{fig:cyclic-structures} for a \suldiox~molecule bonding to waters. Although three waters are shown in the molecular cartoon, any number of waters are allowed. Also, further bonding may occur to any of the participating molecules extraneous to the cyclic structure. Cycle types \Rmnum{2}, \Rmnum{3}, \Rmnum{4} in Figure \ref{fig:cyclic-structures} are cyclic structures in which the \suldiox~is a member of the cycle. Types \Rmnum{1} and \Rmnum{5} do not involve the \suldiox~in the bonding cycle, but are commonly encountered as the smallest cycle formed near the \suldiox. Type \Rmnum{3} is of particular interest because it is one of the most dominant \suldiox~bonding coordinations (``SO'', as shown later) configured as a cyclic structure. 
+The various types of cyclic bonding arrangements are shown in Figure \ref{fig:cyclic-structures} for a \suldiox~molecule bonding to waters. Although three waters are shown in the molecular cartoon, any number of waters are allowed. Also, further bonding may occur to any of the participating molecules extraneous to the cyclic structure. Cycle types \Rmnum{1}, \Rmnum{2}, \Rmnum{3} in Figure \ref{fig:cyclic-structures} are cyclic structures in which the \suldiox~is a member of the cycle. Types \Rmnum{4} and \Rmnum{5} do not involve the \suldiox~in the bonding cycle, but are commonly encountered as the smallest cycle formed near the \suldiox. Type \Rmnum{3} is of particular interest because it is one of the most dominant \suldiox~bonding coordinations (``SO'', as shown later) configured as a cyclic structure. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=1.0]{images/cycle-types-small.png}
+		\caption{}
+		\label{fig:cyclic-structures}
+	\end{center}
+\end{figure}
 
 Baer et al. presented a detailed geometric and spectroscopic breakdown of types \Rmnum{3} cycles with two and three waters from their DFT calculations.\cite{Baer2010} Given the information of the number of waters, atoms, and bonds involved in the bonding cycles, we find that of the three-water type \Rmnum{3} cycles, there exist two structural varieties, shown in Figure \ref{fig:type-3-varieties}, that differ in the arrangement of the waters involved. Type \Rmnum{3}A is arranged with each water contributing an OH bond to the structure of the cycle. Type \Rmnum{3}B involves a single water contributing an OH, whereas the other two waters contribute only the oxygen atom or the entire water molecule to the structure, respectively. This nuance of the three-water type \Rmnum{3} structures, and the overall distribution are presented in more detail later. We also show the distribution of cyclic structures encountered during MD simulations to further understand the behaviors of \suldiox-hydrates at the water surface.
 
-
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=1.0]{images/triple-cycle-types-small.png}
+		\caption{}
+		\label{fig:type-3-varieties}
+	\end{center}
+\end{figure}
