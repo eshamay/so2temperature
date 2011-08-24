@@ -5,13 +5,14 @@ Having examined the bonding coordinations and bonding behavior of \suldiox~with 
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[scale=1.0]{images/cycles/SO-cycle-breakdown-with-cartoons-small.png}
-		\caption{}
+		\caption{Cyclic hydrate structures form throughout the MD simulations involving the \suldiox~and one or more water molecules. Shown here are the different cycles by number of water (up to 4), and their occurence rate as a percentage of the total simulation time. The far right part of the plot shows the contributions of the two types of triple-water cycles (see Figure \ref{fig:type-3-varieties}). The cycles had to meet the ``minimally-SO'' bonding criteria (at least one bond to the sulfur and one oxygen bond on the \suldiox) to be used in the analysis.}
 		\label{fig:cyclic-breakdown}
 	\end{center}
 \end{figure}
+
 The plot in Figure \ref{fig:cyclic-breakdown} shows the distribution of how often the various types of cyclic hydrates were encountered at both cold (blue) and hot (red) temperatures. Each data point shows a percentage of the MD trajectories in which the \suldiox~was a member of a cyclic structure, for different numbers of cyclic waters (up to 4). The two tallest data points, left-most in the plot, show the overall time spent in all types of cyclic structures. Clearly the hot system \suldiox~spends more time in a cyclic structure than at the cold temperature. The plot is based on two criteria for determining if a cyclic structure has formed. (1) The distances between atoms must match the same bonding/distance criteria as used for determining bonding coordinations. (2) The \suldiox~must be minimally in a bonding coordination of type ``SO'', meaning that the sulfur has at least one bonding interaction, and at least one hydrogen-bond must have formed with an oxygen to a neighboring water-hydrogen. As noted earlier in the discussion of the graph-finding routine and the BFS algorithm, the cyclic structures found represent the smallest cycles in which the \suldiox~is a member, based on order of discovery. The \suldiox~will be inevitably involved in other larger and more extended cyclic bonding structures beyond the first one discovered via the BFS. The larger and more extended cyclic structures involving more waters affect the behavior of the hydrogen-bonding network of the water surface. However, we focus here only on the smallest cycles involving the \suldiox~as the most affect the \suldiox~bonding and hydrating behaviors.
 
-It is remarkable that the difference of the time spent in a cyclic structure between the two temperatures is 15\% (42\% cold, 57\%hot). The hot \suldiox~spends well over half of the simulated time bound as one of the hydrate cycles, and the cold \suldiox~spends just under half of the time as such. Thus, in addition to having found the most likely bonding coordination during the simulated life of \suldiox, we have also found that the hydrates of the \suldiox~form a cyclic structure for much of the time it is bound to the water surface.
+It is remarkable that the difference of the time spent in a cyclic structure between the two temperatures is 15\% (42\% cold, 57\% hot). The hot \suldiox~spends well over half of the simulated time bound as one of the hydrate cycles, and the cold \suldiox~spends just under half of the time as such. Thus, in addition to having found the most likely bonding coordination during the simulated life of \suldiox, we have also found that the hydrates of the \suldiox~form a cyclic structure for much of the time it is bound to the water surface.
 
 Now we look at the different types of cyclic hydrates, distinguished by the number of waters involved in the bonding structure. In Figure \ref{fig:cyclic-breakdown} the single and double water cycles are the least frequently encountered structures, accounting for less than 10\% of both temperature simulations. Formation of the single type is likely energetically unfavorable because of the proximity of the single water to the \suldiox. The double-water structure was one of two types of clusters proposed in a previous computational work as a candidate structure contributing to the overall IR spectrum of surface-bound \suldiox.\cite{Baer2010} In the static and geometry-optimized cluster calculations, lacking the extended water structure or bonding from waters external to the hydrate, both the double and triple types appear equally likely to form. However, the MD simulations here have introduced many waters into a dynamic environment allowing for extended bonding networks, and the results show clearly that the double-water cyclic hydrate is formed much less often (less than 5\% at both temperatures) than the triple-water form.
 
@@ -36,7 +37,7 @@ where $f(t)$ is the debounced time-function that better represents the lifespans
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[scale=1.0]{images/cycles/cycle-debouncing-small.png}
-		\caption{}
+		\caption{The dynamic environment of the water surface causes rapid breaking and formation of bonds to the \suldiox, and to waters involved in the cyclic hydrating structures. A ``debouncing'' procedure was developed (described above in the text) to account for the very brief ($<$ 20 fs) breaks to the cyclic structure. A time function, $C(t)$ (dashed black), shows if the bonding distance criteria are met for all members of the cyclic hydrate structure. A gaussian smoothing window was then used to produce $C_s(t)$ (red), which was then used with a cutoff criteria to give the ``debounced'' cycle formation time function, $f(t)$ (green).}
 		\label{fig:debouncing}
 	\end{center}
 \end{figure}
@@ -50,7 +51,7 @@ We know from the transition frequency plots of Figure \ref{fig:coordination-tran
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[scale=1.0]{images/cycles/cyclic-lifespans-inset-small.png}
-		\caption{}
+		\caption{The lifetime of a cyclic hydrate structure after it forms, and before it distorts in shape due to the movement of the liquid surface molecules, is most often short ($<$ 1 ps). Shown here is a plot of cycle hydrate structure lifetimes after having applied the ``debouncing'' procedure (described in the text). Both cold (blue) and hot (red) simulations are graphed. The inset expands the view of the region above 1 ps.}
 		\label{fig:cycle-lifespans}
 	\end{center}
 \end{figure}
