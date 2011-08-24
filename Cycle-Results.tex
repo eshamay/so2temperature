@@ -21,4 +21,20 @@ The results for triple and quadruple-water structures show that larger hydrate c
 
 \subsection {Cyclic Hydrate Structure Lifetimes}
 
-Knowing that the \suldiox~bound to a water surface is most likely in the ``SO'' bonding coordination, and also often taking part in some type of cyclic structure, how long does the cyclic hydrate form before breaking to an acyclic structure? To answer the questions of cyclic lifespans, a method was devised to define a lifetime of a cycle. For each trajectory, the coordinate data was analyzed to determine if a cyclic hydrate structure was formed based on the bonding distance criteria established earlier in this manuscript. A timeline was then produced where each timestep was given a value of 1 or 0 if a \suldiox~cycle was found or not found, respectively. This resulted in a time-function, $C(t)$, similar in nature to a digital signal, as shown in black in Figure \ref{fig:debouncing}. Because 
+Knowing that the \suldiox~bound to a water surface is most likely in the ``SO'' bonding coordination, and also often taking part in some type of cyclic structure, how long does the cyclic hydrate form before breaking to an acyclic structure? To answer the questions of cyclic lifespans, a method was devised to define a lifetime of a cycle. For each trajectory, the coordinate data was analyzed to determine if a cyclic hydrate structure was formed based on the bonding distance criteria established earlier in this manuscript. A timeline was then produced where each timestep was given a value of 1 or 0 if a \suldiox~cycle was found or not found, respectively. This resulted in a time-function, $C(t)$, similar in nature to a digital signal. The resulting cycle formation time-function is plotted for one of the simulated trajectories shown as the dashed black line in Figure \ref{fig:debouncing}. At the far left of the plot the signal is in the ``no cycle'' state, and then switches ``on'' as a cycle is formed. The cyclic structure is very dynamic constantly moving and distorting, so any of the bonds forming the cyclic bonding structure are liable to break and reform quickly. This is manifested in Figure \ref{fig:debouncing} as a series of very sharp spikes in the signal lasting less than 10 fs each. Because of the very rapid breaking and reformation of the cyclic structure, a procedure was used to ``debounce'' the time-signal to disregard very brief moments when the cycle breaks or forms for less than 20 fs. The time-signal, $C(t)$ was smoothed using a moving gaussian window function with a 10 fs width. The resulting smoothed signal, $C_s(t)$, was then cutoff with the following criteria:
+
+\[
+  f(t) = \left\{ 
+  \begin{array}{l l}
+    0 & \quad C_s(t) < 0.2\\
+    1 & \quad C_s(t) \geq 0.2\\
+  \end{array} \right.
+\]
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=1.0]{images/cycles/cycle-debouncing-small.png}
+		\caption{}
+		\label{fig:debouncing}
+	\end{center}
+\end{figure}
