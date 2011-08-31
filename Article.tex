@@ -1,4 +1,5 @@
-\documentclass{article}
+%\documentclass{article}
+\documentclass{scrartcl}
 
 \usepackage {amsmath}
 \usepackage {setspace}
@@ -13,11 +14,19 @@
 \makeatother
 
 % some formatting tags
-\oddsidemargin  0.0in
-\evensidemargin 0.0in
-\textwidth      6.5in
+\usepackage[
+top    = 2.00cm,
+bottom = 2.25cm,
+left   = 2.50cm,
+right  = 2.50cm]{geometry}
+%\oddsidemargin  0.0in
+%\evensidemargin 0.0in
+%\topmargin -0.5in
+%\bottommargin -0.5in
+%\textwidth      6.5in
 
-%\title{Temperature Effects on Surface Sulfur Dioxide}
+\title{Further Explorations of \suldiox~Aqueous Adsorption:}
+\subtitle{Coordinated Bonding and Cyclic Hydrates}
 %\author{Eric S. Shamay \and Geraldine L. Richmond}
 
 \begin{document}
@@ -44,8 +53,6 @@
 \include{ComputationalMethods}
 \include{Coordination-Results}
 \include{Cycle-Results}
-%\include{orientation}
-%\include{sfg}
 %\include{Conclusions}
 
 \bibliography{bib/so2temperature}
