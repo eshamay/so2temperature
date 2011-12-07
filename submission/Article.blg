@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: Article.aux
+The style file: achemso.bst
+Database file #1: so2temperature.bib
+`address' is a missing field, not a string, for entry Harary1973
+while executing---line 936 of file achemso.bst
+Warning--empty address in Harary1973
+`address' is a missing field, not a string, for entry Knuth1997
+while executing---line 936 of file achemso.bst
+Warning--empty address in Knuth1997
+`address' is a missing field, not a string, for entry Cormen2001
+while executing---line 936 of file achemso.bst
+Warning--empty address in Cormen2001
+`address' is a missing field, not a string, for entry Ellson2004
+while executing---line 936 of file achemso.bst
+Warning--empty address in Ellson2004
+You've used 40 entries,
+            1916 wiz_defined-function locations,
+            899 strings with 12811 characters,
+and the built_in function-call counts, 6297 in all, are:
+= -- 254
+> -- 548
+< -- 1
++ -- 171
+- -- 131
+* -- 706
+:= -- 917
+add.period$ -- 40
+call.type$ -- 40
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 44
+duplicate$ -- 399
+empty$ -- 520
+format.name$ -- 171
+if$ -- 1232
+int.to.chr$ -- 0
+int.to.str$ -- 40
+missing$ -- 45
+newline$ -- 124
+num.names$ -- 40
+pop$ -- 78
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 272
+stack$ -- 0
+substring$ -- 0
+swap$ -- 174
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 40
+width$ -- 42
+write$ -- 262
+(There were 4 error messages)
