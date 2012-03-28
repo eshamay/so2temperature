@@ -1,88 +1,100 @@
+\documentclass{article}
 
+\usepackage {textcomp}
+\usepackage {setspace}
+\usepackage [pdftex]{graphicx}
 
+% some formatting tags
+\usepackage[
+top    = 0.5in,
+bottom = 1.5in,
+left   = 2.50cm,
+right  = 2.50cm]{geometry}
+
+\begin{document}
+
+%\doublespacing
 Journal: The Journal of Physical Chemistry 
+
 Manuscript ID: jp-2011-11804m 
+
 Title: "Staying Hydrated: The Molecular Journey of Gaseous Sulfur Dioxide to a 
+
 Water Surface" 
+
 Author(s): Shamay, Eric; Richmond, Geraldine 
+\\ \\
+Dear Prof. Jungwirth,
+
+Because of the depth and impact of the reviewer comments about our recently submitted manuscript, the authors have decided to completely re-run the simulations of SO2 on water in order to bring the simulation parameters into line with the reviewer suggestions. This major reworking of the simulations and data resulted in major changes to the data presented, manuscript text, results and conclusions. We have put forth great effort to respond to each of the reviewer comments. Please find our enumerated responses below, matching to each numbered point of the original reviewer comments. We believe that with the changes to the work and the newly run simulations, the new manuscript is more accurate and in line with current simulation standards for aqueous systems. We hope you will further consider our manuscript for publication in the journal.
+\\ \\
+
+--Eric Shamay \\ \\
 
 
-Dear Prof. Richmond: 
+\textbf{Reviewer: 1} \\
 
-Thank you for submitting your manuscript for publication in The Journal of Physical Chemistry. It has been examined by expert reviewers who have concluded that the work is of potential interest to the readership of The Journal of Physical Chemistry; however, it appears that a major revision, possibly followed by further reviewer evaluation, will be needed prior to its further consideration for publication. Please see the enclosed reviewers' reports for details regarding the requested changes and/or additions. 
-
-Additionally, we have noticed that your manuscript referenced above is missing the Table of Contents graphic. Please see the submission requirements for the Journal of Physical Chemistry TOC Graphic at http://pubs.acs.org/paragonplus/submission/jpchax/jpchax_authguide.pdf. 
-Note that the graphic for the TOC entry should be in the form of a structure, graphical image, photograph, reaction scheme, or equation. The Author must submit the graphic in the actual size to be used for the TOC, fitting in an area 1.375 in. high and 3.5 in. wide (3.6 cm Ã— 8.9 cm). The allowed file formats for TOC graphics are TIFF and PDF. Please submit a revision of this manuscript including the TOC graphic as the final page of your Article manuscript revision submission. Separate TOC graphics are not allowed. 
-
-We ask that you submit your revision no later than 29-Apr-2012. 
-
-When submitting your revised manuscript through ACS Paragon Plus, you will be able to respond to the reviewers' comments in the text box provided or by attaching a file containing your detailed responses outlining the changes made and explaining your reasons for disagreeing with any suggestions you choose not to follow. 
-
-To Revise Your Manuscript on the Web: 
-
-To revise your manuscript, log into ACS Paragon Plus at http://paragonplus.acs.org/login and select "My Authoring Activity". There you will find your manuscript title listed under "Revisions Requested by Editorial Office." Your original files are available to you when you upload your revised manuscript. If you are replacing files, please remove the old version of the file from the manuscript before uploading the new file. 
-
-Thank you for considering The Journal of Physical Chemistry as a forum for the publication of your work. 
-
-With sincere regards, 
-
-Prof. Pavel Jungwirth 
-Senior Editor 
-The Journal of Physical Chemistry 
-Journal Fax: 202-354-5425 
-Journal Email: jungwirth-office@jpc.acs.org 
-
-
-Reviewer: 1 
------------
-
-1,2,3. The authors have taken into consideration the entirety of all the reviewer suggestions regarding functional and basis sets, cutoffs, timesteps, and temperature that affect the simulations. The changes are reflected in the text, and meet the standards suggested in the reviews. All the simulation data has been re-analyzed, and the results are all presented from the new simulations.
+1,2,3. The authors have taken into consideration the entirety of all the reviewer suggestions regarding functional and basis sets, cutoffs, timesteps, and temperature that affect the simulations. The changes to the simulation parameters are reflected in the text, and meet the standards suggested in the reviews. All the simulations have been rerun, data has been re-analyzed, and the results are all presented from the new simulations.
+\\
 % 1. The computational parameters chosen as well as the authorsʼ claim that “these computational parameters were verified to yield a reasonable description of bulk room temperature water …” runs counter to published results. 
 
 %2. Given that the system contains water and thus the highest vibrational modes are ~3700 cm-1, it is hard to fathom a timestep of “1 fs” can be used to accurately integrate the equation of motions without energy drift. If this is truly the case, it might behoove the authors to provide some supplemental materials showing the conserved quantity as a function of time for both the NVT and NVE simulations provided the system is not glassy and can sample all the possible conformations. 
 
 %3. The author stated that DZVP basis set was chosen, it was never explained why the authors believe that such a basis set is adequate. In fact, work by VandeVondele et al shows that at least a TZV2P basis set with a cutoff of 280 Ry was necessary in order to obtain forces comparable to other more established codes such as CPMD. In addition, works by Siepmann et al on vapor liquid coexistence curves hints that the standard TZV2P basis set with a cutoff of 280 Ry might still be inadequate. Last, what was the convergence criteria used for the SCF? 
 
-%4a. The cold system temperature was set to 210K in the resimulated systems. This much larger separation of temperatures is more in line with the reviewer's concerns regarding thermostatting. 
-4. Following recent literatures on simulations of liquid water using potentials derived from density functional theory (albeit some with different codes as well as different methods), one firm conclusions can be made is that water near ambient conditions are more glassy than liquid. One way to overcome this is through massive thermostating which in addition also ensures equipartition of the kinetic energy in all degrees of freedom. This raises two issues.  a. First, as the production run was obtained in the microcanonical (NVE) ensemble and the two target temperature is only separated by 27 degrees, can the authors show that temperature for the subsystem of interest is really the targeted temperature thus fulfilling the equipartition theorem.  b. And can the authors show that indeed, the water part of the simulated system is behaving as a liquid and not conformationally trap in a glassy state? 
+4. The cold system temperature was set to 210K in the resimulated systems. This much larger separation of temperatures is more in line with the reviewer's concerns regarding temperature separation. Furthermore, included with this revised submission are plots of the temperature and the conserved quantity for each timestep for both low and high temperature systems. As is evident, the temperature increases until reaching the setpoint temperature soon after the start of the simulations. The plateau region of the temperature extends for the majority of the simulations. Lastly, it is clear that the separation of temperatures persists for the entire simulation time, confirming that the systems are representing temperatures that are distinct. The authors believe that this is evidence that the parameter set chosen for simulation of these small water systems are sufficient to recreate the expected temperature conditions, even when simulating in the NVE ensemble.
+\\
+%4. Following recent literatures on simulations of liquid water using potentials derived from density functional theory (albeit some with different codes as well as different methods), one firm conclusions can be made is that water near ambient conditions are more glassy than liquid. One way to overcome this is through massive thermostating which in addition also ensures equipartition of the kinetic energy in all degrees of freedom. This raises two issues.  a. First, as the production run was obtained in the microcanonical (NVE) ensemble and the two target temperature is only separated by 27 degrees, can the authors show that temperature for the subsystem of interest is really the targeted temperature thus fulfilling the equipartition theorem.  b. And can the authors show that indeed, the water part of the simulated system is behaving as a liquid and not conformationally trap in a glassy state? 
 
-5. “Nose” should be “Nosé”. In addition, the coupling frequency, when not chosen appropriately can cause energy drifts, was not specified. 
+5. The temperature coupling constant was added to the text, and the typo was revised.
+\\
+%5. “Nose” should be “Nosé”. In addition, the coupling frequency, when not chosen appropriately can cause energy drifts, was not specified. 
 
-6. The text has been updated to reflect the equilibration period of 1 ps.
+6. The text has been updated to reflect the correct equilibration period of 1 ps.
+\\
 %6. The authors indicate the system was equilibrated for “1 ns”. This just does not seem correct unless the equilibration was done using a cheaper potential other than DFT. 
 
-7. From the RDF, it can be seen that both hot and cold simulations converges to 1.0 as distance increases. But if the sulfur dioxide gas molecule is at the liquid-vapor interface, shouldnʼt this value approach something more like 0.5 instead of 1.0? 
+7. Both RDFs converge to 1.0 because of the normalization routine employed in the calculations. This is typical of RDF calculations - normalized to unity - and the authors prefer this normalization as it aids in comparison to the other RDFs published for similar systems (see Baer et al. cited in the text)
+	\\
+%7. From the RDF, it can be seen that both hot and cold simulations converge to 1.0 as distance increases. But if the sulfur dioxide gas molecule is at the liquid-vapor interface, shouldnʼt this value approach something more like 0.5 instead of 1.0? 
 
-8. The inclusion of dispersion corrections were not explored for this simulation study. The goal of the project was to monitor specific bonding behaviors of SO2 using previously established methods, not as a study of the results from various constraints or changes to simulation parameters.
+8. The inclusion of dispersion corrections were not explored for this simulation study. The goal of the project was to monitor specific bonding behaviors of SO2 using previously established methods, not as a study of the results from various constraints or changes to simulation parameters. The authors believe that additional discussion on this topic would distract from the narrative presented.
+\\
 %8. Has the authors explore the ramifications of including dispersion correction in their calculation which might play a large in such a system? 
 
 
-Reviewer: 2 
------------
+\textbf{Reviewer: 3} \\
 
-Recommendation: This paper is probably publishable, but should be reviewed again in revised form before it is accepted. 
-
-Reviewer: 3
------------
-
-1. Because the re-simulated systems were done using B3LYP functional a benchmark comparison is no longer necessary. Small cluster studies of so2 with several waters have been performed using high-accuracy basis and functionals previously, and we do not set out to reproduce that work here, but rather to build on it. The authors believe that the current work with the new simulation parameters achieves a level of accuracy suggested by the reviewers, but that lengthy discussion of this fact is not requisite in this particular simulation study.
+1. Because the re-simulated systems were done using B3LYP functional, the authors believe a benchmark comparison is no longer necessary. Small cluster studies of so2 with several waters have been performed using high-accuracy basis and functionals previously, and we do not set out to reproduce that work here, but rather to build on it. The authors believe that the current work with the new simulation parameters achieves a level of accuracy suggested by the reviewers, but that lengthy discussion of this fact is not requisite in this particular simulation study.
+\\
 %1.	The predominant stabilization interaction between and SO2 molecule and a water molecule is due to dipoles. This essentially places the sulpher close to the water oxygen. This simple dipole interaction reasoning is consistent with everything the authors find. However, there is a component of this interaction that arises due to van der Waal’s, due to the sulpher lone pairs. In this regards BLYP has been used here, which is known not to capture such subtle interactions. Considering this, I would have liked to see at least a set of benchmarks for the functional and basis used in this work, with post Hartree-Fock MP2 and B3LYP used for comparison. The benchmark system could have involved a simple cluster of SO2 with a few water molecules. The absence of this comparison makes the results weak. 
 
-2.	The larger concentration of unbound SO2 at a lower temperature is counter-intuitive. (Fig. 4) One would have expected the opposite trend and no physical reasoning is provided to explain this result. 
+2. After resimulating the systems the resulting relative populations of unbound SO2 has changed. The more intuitive stronger binding of SO2 at the cold temperature results from the higher accuracy of the functional and basis sets used in the new simulations. The new results are also more in line with the author's experimental results from the previous publications cited in the text.
+\\
+%2. The larger concentration of unbound SO2 at a lower temperature is counter-intuitive. (Fig. 4) One would have expected the opposite trend and no physical reasoning is provided to explain this result. 
 
 3. Several previous simulation studies have discussed the structure of water under similar simulated conditions. The focus of the work is on the structure of SO2 and its behavior near a water cluster surface. Thus, the authors have made the conscious decision to avoid lengthy discussion of the surrounding water's structure.
+\\
 %3.	The structure of the surrounding water molecules is never discussed. 
 
-4.	It is stated that Quickstep is used. Assume this implies that the Car-Parrinello method is used, but it is not stated in the paper. 
+4. Reference to the Car-Parrinello method has been added to the text.
+\\
+%4.	It is stated that Quickstep is used. Assume this implies that the Car-Parrinello method is used, but it is not stated in the paper. 
 
-5.	The system includes 36 water molecules in a box. The effect of this restriction is important to discuss. 
+5. The new systems were simulated with a smaller number of water molecules and are referred to as a small water cluster. The effects of using few water are not discussed in detail as the number of waters used is representative of many small-cluster MD and DFT studies. The authors believe that the number of waters is in line with several previous studies of molecules bound to small water clusters, and further discussion is not warranted as part of the narrative being presented.
+\\
+%5.	The system includes 36 water molecules in a box. The effect of this restriction is important to discuss. 
 
-6. K-point integration was not used in the integration, as this was not addressed in similar previous studies. Also, the CP2K simulation package does not allow for this type of calculation. The authors do not believe this is detrmiental to the accuracy of the calculations.
+6. K-point integration was not used in the integration, as this was not addressed in similar previous studies. Also, the CP2K simulation package does not allow for this type of calculation. The authors do not believe this is detrmiental to the accuracy of the calculations and further discussion is not pertinent to this study.
+\\
 %6.	Was k-point integration used in the calculation? If so how many. If only gamma-point was used, again there needs to be a discussion on the effectiveness of the calculation. 
 
-7. In our new simulations, the timestep has been reduced to 0.5 fs. The text has been updated to reflect this.
+7. In the new simulations, the timestep has been reduced to 0.5 fs. The text has been updated to reflect this.
+\\
 %7.	The time-step of 1fs appears to be too large for a Car-Parrinello simulation. Since NVE simulations are used, I would be interested in knowing how well the total system energy is conserved (which determines the extent to which the dynamics simulations are accurate). 
 
-% 8.	With respect to previous work on molecular computations using graphs, I would like to bring to the author’s attention the following work by O. Sinanoglu, which to my knowledge is one of the first such attempts: Oktay Sinanoglu J. Am. Chem. Soc., 1975, 97 (9), pp 2309–2320. 
 8. The authors thank the reviewer for pointing out this previous study using graph theoretical techniques (Oktay Sinanoglu J. Am. Chem. Soc., 1975, 97 (9), pp 2309–2320). That study pertains to synthetic or catalytic pathways of organic systems, but can be generalized to very convoluted and complicated reaction pathways leading to very intricate graphical networks. The systems investigated in that work are much more complicated, and the graphs are designed to convey a great deal more information than in the present text. In our work we wish to investigate only the transitions between different coordination or cyclic-hydrate states, and are not interested in multi-reactant processes. A citation to the work has been added to the text.
+\\
+% 8.	With respect to previous work on molecular computations using graphs, I would like to bring to the author’s attention the following work by O. Sinanoglu, which to my knowledge is one of the first such attempts: Oktay Sinanoglu J. Am. Chem. Soc., 1975, 97 (9), pp 2309–2320. 
 
+\end{document}
